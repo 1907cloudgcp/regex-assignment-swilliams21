@@ -1,1 +1,24 @@
-this is my answer
+	this is my answer
+
+1. grep -i "^z" cities.txt
+2. grep -i ".*gan$" cities.txt
+-- I had to go into vi and change my line endings to unix for this to work
+3. grep -i "^[ADE]" cities.txt
+	grep -i -c "^[ADE]" cities.txt
+4. grep -i "^.ar" cities.txt
+	grep -i -c "^.ar" cities.txt
+5. grep -i -v -c "^c" cities.txt
+	grep -i -v "^c" cities.txt
+6. egrep -i "[^' ']{14}" cities.txt
+7. nngrep -i -c "^b" cities.txt
+8. expr $(egrep -i -c "d" cities.txt) + $(egrep -i -c "d" cities.txt) - $(egrep -i -o "d" cities.txt | wc -l)
+-- I haven't figured out had how to copy paste on linux so I manually typed this.
+-- the math is querry1 - (querry2 - querry1)
+-- then the numbers get rearanged to make the typing easier
+-- querry1 + querry1 - querry2
+-- querry1 is the amount of words that have a `d` in them.
+-- querry2 is the amount of times the letter d shows up.
+-- in theory, it should be querry2 - querry1 but that didn't give me the right answer because I did something wrong
+-- I messed around and rearanged the numbers and got a convuluted answer that gives the answer required by the directions
+9. egrep -i "(.)\1$" cities.txt
+10. egrep -i "^(.)(.).\2\1$" cities.txt
